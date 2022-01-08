@@ -4,7 +4,7 @@
       $user = htmlentities($_POST['user']);
       $password = htmlentities($_POST['password']);
       $database = htmlentities($_POST['database']);      
-      echo 'SERVER: ' . $server . ', USER: ' .$user . ', CLAVE: ' .$password . ', DB: ' .$database;
+      echo 'SERVER:   ' . $server . ', USER: ' .$user . ', CLAVE: ' .$password . ', DB: ' .$database;
    }
 ?>
 
