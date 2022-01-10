@@ -1,10 +1,12 @@
 <?php
+  header("Refresh:35;url=hello.php");
+ 
    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $server = htmlentities($_POST['server']);
     $user = htmlentities($_POST['user']);
     $password = htmlentities($_POST['password']);
     $database = htmlentities($_POST['database']);      
-    echo 'Enviando datos';
+    echo 'Esperar 30 segundos para ver historico de registros ...';
  
 $postData = array (
     'extra_vars' => 
@@ -45,7 +47,7 @@ curl_setopt_array($ch, array(
     curl_close($ch);
     
     // Print the date from the response
-    echo $responseData['id'];
+    //echo $responseData['id'];
     }
 ?>
 <form method="post">
@@ -59,3 +61,4 @@ Database: <input type="text" name="database">
     <br>
     <input type="submit" value="Enviar">
 </form>
+<!-- <a href="hello.php">Ver resultados</a> -->
