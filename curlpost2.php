@@ -7,7 +7,7 @@
     $password = htmlentities($_POST['password']);
     $database = htmlentities($_POST['database']);      
     echo 'Esperar 30 segundos para ver historico de registros ...';
- 
+
 $postData = array (
     'extra_vars' => 
     array (
