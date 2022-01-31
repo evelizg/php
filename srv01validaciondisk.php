@@ -56,20 +56,3 @@ sqlsrv_close( $conn);
 </table>
 </body>
 </html>
-
-
-    <!-- <?php 
-        $query = "SELECT * FROM main_cat";
-        $result = mysql_query($query);
-        $i = 0;
-        while($end = mysql_fetch_array($result)){
-            echo "<tr>";
-                if($i % 2 == 0){
-                    echo '<td bgcolor="#CCCCCC">'.$end['page_name'].'</td>';
-                }else{
-                    echo '<td bgcolor="#99CC66">'.$end['page_name'].'</td>';
-                }
-            echo "</tr>";
-            $i++;
-            }
-    ?> -->
