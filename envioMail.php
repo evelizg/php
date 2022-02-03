@@ -40,7 +40,12 @@ if ($result) {
 // output data of each row
 while($row = sqlsrv_fetch_array( $result, 2)) {
 echo "<tr><td>" . $row["Objeto"]. "</td><td>" . $row["Metrica"] . "</td><td>"
-. $row["Valor"] . "</td><td>" . $row["Resultado"] . "</td></tr>";
+. $row["Valor"] . "</td>";
+if($row["Resultado"] == "Fallido"){
+    echo '<td bgcolor=#852222">'. $row["Resultado"] . "</td></tr>";
+    }else{
+        echo '<td>'.$row["Resultado"]."</td></tr>";
+    }
 }
 echo "</table>";
 } else { echo "0 results"; }

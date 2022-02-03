@@ -42,7 +42,12 @@ if ($result) {
 // output data of each row
 while($row = sqlsrv_fetch_array( $result, 2)) {
 echo "<tr><td>" . $row["ServiceName"]. "</td><td>" . $row["ServiceStatus"] . "</td><td>"
-. $row["StatusDateTime"]->format('Y-m-d H:i:s') . "</td><td>" . $row["ServerName"] . "</td><td>" . $row["PhysicalSrverName"] . "</td><td>" . $row["STATUS"] . "</td></tr>";
+. $row["StatusDateTime"]->format('Y-m-d H:i:s') . "</td><td>" . $row["ServerName"] . "</td><td>" . $row["PhysicalSrverName"] . "</td>";
+if($row["STATUS"] == "Fallido"){
+echo '<td bgcolor=#852222">'. $row["STATUS"] . "</td></tr>";
+}else{
+    echo '<td>'.$row["STATUS"]."</td>";
+}
 }
 echo "</table>";
 } else { echo "0 results"; }

@@ -41,7 +41,13 @@ if ($result) {
 // output data of each row
 while($row = sqlsrv_fetch_array( $result, 2)) {
 echo "<tr><td>".$row["Objeto"]."&nbsp;"."</td><td>".$row["Metrica"]."</td><td>"
-.$row["Valor"]."</td><td>".$row["Resultado"]."</td><td>".$row["job_name"]."</td></tr>";
+.$row["Valor"]."</td>";
+if($row["Resultado"] == "Fallido"){
+    echo '<td bgcolor=#852222">'. $row["Resultado"] . "</td>";
+    }else{
+        echo '<td>'.$row["Resultado"]."</td>";
+    }
+echo "<td>".$row["job_name"]."</td></tr>";
 }
 echo "</table>";
 } else { echo "0 results"; }
